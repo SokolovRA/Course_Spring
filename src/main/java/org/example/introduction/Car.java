@@ -1,9 +1,18 @@
 package org.example.introduction;
 
-public class Car {
-    void go(){
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("singleton")
+public class Car implements Transport{
+
+    @Override
+    public void go() {
         System.out.println("Автомобиль едет");
+
     }
+
     public void init() {
         System.out.println("Class Car: init");
     }
